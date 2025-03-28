@@ -17,7 +17,7 @@ const Register = () => {
       const user = userCredential.user;
 
       // Save user to MongoDB with the selected role
-      const response = await fetch('http://localhost:5000/api/auth/save-user', {
+      const response = await fetch('https://assignment-backend-ejto.onrender.com/api/auth/save-user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, role, firebase_uid: user.uid }),
