@@ -14,13 +14,13 @@ const StudentDashboardPage = () => {
     const fetchData = async () => {
       try {
         // Fetch questions
-        const questionsResponse = await fetch('http://localhost:5000/api/questions/get-questions');
+        const questionsResponse = await fetch('https://assignment-backend-ejto.onrender.com/api/questions/get-questions');
         const questionsData = await questionsResponse.json();
         setQuestions(questionsData);
 
         // Fetch submitted answers
         const submittedResponse = await fetch(
-          `http://localhost:5000/api/results/get-result?studentId=${auth.currentUser.uid}`
+          `https://assignment-backend-ejto.onrender.com/api/results/get-result?studentId=${auth.currentUser.uid}`
         );
         const submittedData = await submittedResponse.json();
         console.log('Submitted Data:', submittedData); // Debugging log
@@ -52,7 +52,7 @@ const StudentDashboardPage = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/results/save-result', {
+      const response = await fetch('https://assignment-backend-ejto.onrender.com/api/results/save-result', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
