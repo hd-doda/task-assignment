@@ -16,7 +16,7 @@ const Login = () => {
       const user = userCredential.user;
 
       // Fetch the user's role from MongoDB
-      const response = await fetch(`http://localhost:5000/api/auth/get-user-role?firebase_uid=${user.uid}`);
+      const response = await fetch(`https://assignment-backend-ejto.onrender.com/api/auth/get-user-role?firebase_uid=${user.uid}`);
       const data = await response.json();
 
       if (response.ok) {
